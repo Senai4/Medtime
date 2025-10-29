@@ -1,3 +1,16 @@
+## Índice
+- [Projeto MedTime](#projeto-medtime)
+- [Pesquisa sobre o Automedicamento](#pesquisa-sobre-o-automedicamento)
+- [Problema](#problema)
+- [Solução](#solucao)
+- [Objetivos do Projeto](#objetivos-do-projeto)
+- [Funcionalidades Planejadas](#funcionalidades-planejadas)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Público-Alvo](#publico-alvo)
+- [Políticas de Uso e Privacidade](#politicas-de-uso-e-privacidade)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+- [Configure a Conexão](#configure-a-conexao)
+
 ## Projeto MedTime
 
 * Este é um projeto de registro de alarmes de medicamentos, onde o usuário pode escanear o qrcode ou adicionar a url da sua receita e o aplicativo gera uma serie de horários conforme foram passadas pelo médico.
