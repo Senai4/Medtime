@@ -68,7 +68,7 @@ dose receitada.
           host: 'localhost',
           user: 'root', // Seu usuário do MySQL
           password: 'SUA_SENHA_AQUI', // SUA SENHA DO MYSQL AQUI
-          database: 'medtime_db'
+          database: 'medtime'
         });
 
 * Na pasta backend-express rode "node app.js".
