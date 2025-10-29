@@ -14,16 +14,17 @@ dose receitada.
 - https://portal.crfsp.org.br/noticias/10535-pesquisa-aponta-que-77-dos-brasileiros-tem-o-habito-de-se-automedicar.html
 
 ## Problema:
-
-* Esquecimento de horários de medicações, falta de conclusão de um tratamento.
-
-* O uso de medicamentos inadequados podem causar efeitos colaterais severos e irreversíveis, como a automedicação.
+* Esquecimento de horários e doses
+* Falta de conclusão do tratamento
+* Uso inadequado de medicamentos
+* Automedicação
+* Dificuldade em acompanhar múltiplos medicamentos
+* Impacto psicológico e social
 
 ## Solução:
-
 * Site acessível para acompanhar o tratamento e garantir que os horários, doses e duração sejam implemntados corretamente
-
 * Levar informações de como, o uso inadequado de medicações pode ser perigoso.
+* Facilidade de monitoramento por familiares ou cuidadores
 
 ## Objetivos do Projeto
 - Facilitar o cotidiano de pacientes no controle de medicamentos.  
