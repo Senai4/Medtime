@@ -1,9 +1,10 @@
 ## Índice
 - [Projeto MedTime](#projeto-medtime)
-- [Pesquisa sobre o Automedicamento](#pesquisa-sobre-o-automedicamento)
 - [Problema](#problema)
 - [Solução](#solucao)
 - [Objetivos do Projeto](#objetivos-do-projeto)
+- [Pesquisas](#pesquisas)
+- [Automedicamento](#automedicamento)
 - [Funcionalidades Planejadas](#funcionalidades-planejadas)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Público-Alvo](#publico-alvo)
