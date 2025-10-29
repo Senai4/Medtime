@@ -10,6 +10,7 @@ import {Usuario, LoginResponse, CadastroResponse} from '../models/usuario.model'
 export class AuthService {
   // URL da sua API Express.
   private apiUrl = 'http://localhost:3000/users';
+  currentUser$: any;
 
   constructor(private http: HttpClient) {}
 

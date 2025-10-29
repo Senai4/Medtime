@@ -1,0 +1,27 @@
+<div class="nav">
+  <div class="menuImg" #menuIcon (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="menu" #menu [class.active]="menuativo">
+    <a href="/sobre">Sobre Nós</a>
+    <a href="/curiosidades">Curiosidades</a>
+    <a href="/scanner">Escanear QrCode</a>
+    <a href="/administrador">Administrador</a>
+  </div>
+
+  <div class="logo">
+    <img src="assets/img/Logo.png" alt="logo">
+  </div>
+
+  <form>
+    <i class="fas fa-search"></i>
+    <input type="text" class="input" placeholder="Procurando alguma coisa?">
+  </form>
+
+  <div class="user" *ngIf="authService.currentUser$ | async as user">
+    <i class="fas fa-user.circle"></i>
+    <span class="user-name">
+    </span>
+  </div>
+</div>
