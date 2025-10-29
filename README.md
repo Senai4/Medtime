@@ -2,7 +2,7 @@
 
 * Este é um projeto de registro de alarmes de medicamentos, onde o usuário pode escanear o qrcode ou adicionar a url da sua receita e o aplicativo gera uma serie de horários conforme foram passadas pelo médico.
 
-* O Medtime tem o objetivo de atender usuários de medicamentos constantes para auxiliar no uso dos mesmo, e assim, trazendo conforto e segurança para o usuário e membros próximos.
+* O Medtime visa ajudar pessoas que usam medicamentos regularmente, oferecendo suporte para seu uso correto e promovendo tranquilidade para elas e para quem está ao seu redor.
 
 ## Pesquisa sobre o Automedicamento 
 
