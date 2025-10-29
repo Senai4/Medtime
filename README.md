@@ -17,22 +17,6 @@
 
 * O Medtime visa ajudar pessoas que usam medicamentos regularmente, oferecendo suporte para seu uso correto e promovendo tranquilidade para elas e para quem está ao seu redor.
 
-## Pesquisa sobre o Automedicamento 
-
-* Uma pesquisa realizada pelo Conselho Federal de Farmácia (CFF), por meio do Instituto Datafolha, constatou que a automedicação é um hábito comum a 77% dos brasileiros que fizeram uso de medicamentos nos últimos seis meses. Quase metade (47%) se automedica pelo menos uma vez por mês, e um quarto (25%) o faz todo dia ou pelo menos uma vez por semana. Inédita na história dos conselhos de Farmácia, a pesquisa investigou o comportamento dos brasileiros em relação à compra e ao uso de medicamentos. O estudo detectou ainda uma modalidade diferente de automedicação, a partir de medicamentos prescritos. Nesse caso, a pessoa passou pelo profissional da saúde, tem um diagnóstico, recebeu uma receita, mas não usa o medicamento conforme orientado, alterando a 
-dose receitada.
-
-* Fontes:
-- https://portal.crfsp.org.br/noticias/10535-pesquisa-aponta-que-77-dos-brasileiros-tem-o-habito-de-se-automedicar.html
-
-## Pesquisa sobre Uso inadequado de medicamentos
-
-* No Espírito Santo, de acordo com dados do Centro de Assistência e Informação Toxicológica (Ciatox), entre janeiro e abril deste ano, 1.570 pessoas foram intoxicadas por medicamentos. No ano passado, no mesmo período, o número de intoxicações por consumo inadequado de remédios foi de 1.402 casos. Os dados do Ciatox-ES apontam ainda que, no Estado, os dez principais ativos envolvidos em casos de intoxicação por uso incorreto de medicamentos são o clonazepan, paracetamol, alprazolam, sertralina, amitriptilina, diazepam, risperidona, dipirona, carbonato de lítio e carbamazepina.
-
-* Fontes:
-- https://saude.es.gov.br/Not%C3%ADcia/saude-alerta-sobre-uso-indiscriminado-de-medicamentos
-
-
 ## Problema:
 * Esquecimento de horários e doses
 * Falta de conclusão do tratamento
@@ -52,7 +36,24 @@ dose receitada.
 - Facilitar o cotidiano de pacientes no controle de medicamentos.  
 - Criar uma plataforma digital acessível e intuitiva para organização de horários e dosagens.  
 - Reduzir erros na administração de medicamentos.  
-- Oferecer alarmes e notificações para lembrar o horário correto da medicação.  
+- Oferecer alarmes e notificações para lembrar o horário correto da medicação.
+
+  
+## Pesquisas
+## Automedicamento 
+
+* Uma pesquisa realizada pelo Conselho Federal de Farmácia (CFF), por meio do Instituto Datafolha, constatou que a automedicação é um hábito comum a 77% dos brasileiros que fizeram uso de medicamentos nos últimos seis meses. Quase metade (47%) se automedica pelo menos uma vez por mês, e um quarto (25%) o faz todo dia ou pelo menos uma vez por semana. Inédita na história dos conselhos de Farmácia, a pesquisa investigou o comportamento dos brasileiros em relação à compra e ao uso de medicamentos. O estudo detectou ainda uma modalidade diferente de automedicação, a partir de medicamentos prescritos. Nesse caso, a pessoa passou pelo profissional da saúde, tem um diagnóstico, recebeu uma receita, mas não usa o medicamento conforme orientado, alterando a 
+dose receitada.
+
+* Fontes:
+- https://portal.crfsp.org.br/noticias/10535-pesquisa-aponta-que-77-dos-brasileiros-tem-o-habito-de-se-automedicar.html
+
+## Uso inadequado de medicamentos
+
+* No Espírito Santo, de acordo com dados do Centro de Assistência e Informação Toxicológica (Ciatox), entre janeiro e abril deste ano, 1.570 pessoas foram intoxicadas por medicamentos. No ano passado, no mesmo período, o número de intoxicações por consumo inadequado de remédios foi de 1.402 casos. Os dados do Ciatox-ES apontam ainda que, no Estado, os dez principais ativos envolvidos em casos de intoxicação por uso incorreto de medicamentos são o clonazepan, paracetamol, alprazolam, sertralina, amitriptilina, diazepam, risperidona, dipirona, carbonato de lítio e carbamazepina.
+
+* Fontes:
+- https://saude.es.gov.br/Not%C3%ADcia/saude-alerta-sobre-uso-indiscriminado-de-medicamentos
 
 ## Funcionalidades Planejadas
 - Leitura de QR Code para importação automática da prescrição médica.  
