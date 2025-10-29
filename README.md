@@ -54,7 +54,14 @@ dose receitada.
 * No Espírito Santo, de acordo com dados do Centro de Assistência e Informação Toxicológica (Ciatox), entre janeiro e abril deste ano, 1.570 pessoas foram intoxicadas por medicamentos. No ano passado, no mesmo período, o número de intoxicações por consumo inadequado de remédios foi de 1.402 casos. Os dados do Ciatox-ES apontam ainda que, no Estado, os dez principais ativos envolvidos em casos de intoxicação por uso incorreto de medicamentos são o clonazepan, paracetamol, alprazolam, sertralina, amitriptilina, diazepam, risperidona, dipirona, carbonato de lítio e carbamazepina.
 
 * Fontes:
-- https://saude.es.gov.br/Not%C3%ADcia/saude-alerta-sobre-uso-indiscriminado-de-medicamentos
+- https://saude.es.gov.br/Not%C3%ADcia/saude-alerta-sobre-uso-indiscriminado-de-medicamentos.
+
+### Falta de conclusão do tratamento
+
+* A falta de adesão ao tratamento pelo paciente é considerada como um problema de saúde pública, e tem sido denominada de “epidemia invisível”, variando de 15 a 93% para portadores de doenças crônicas, com média estimada de 50%, dependendo do método empregado para a medida. Não é incomum encontrarmos casos de pessoas que abandonam o tratamento. Ao fazer isso, o paciente está negligenciando a própria saúde e em alguns casos, pode estar colocando sua vida em risco. A notável melhora, o preço do remédio e até mesmo o tempo para que o tratamento de fato se encerre são desculpas utilizadas para pará-lo por conta própria.
+
+* Fontes:
+- https://medico24hs.com.br/blog/saude/abandono-de-tratamento-quais-as-consequencias-para-a-saud
 
 ## Funcionalidades Planejadas
 - Leitura de QR Code para importação automática da prescrição médica.  
