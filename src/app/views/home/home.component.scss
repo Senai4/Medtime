@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    padding-top: 80px;
+    padding-top: 80px; /* space for fixed nav */
 }
 
 .nav {
@@ -13,7 +13,7 @@ body {
     background: linear-gradient(to right, #024f87, #0f939b, #7DA0CA);
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 16px;
     position: fixed;
     top: 0;
     left: 0;
@@ -22,23 +22,27 @@ body {
 
 /* Estilo para a logo */
 .logo img {
-    height: 190px; /* Ajuste o tamanho conforme necessário */
+    height: 48px; /* reduzido para caber na barra */
     width: auto; /* Mantém a proporção da imagem */
-    margin-left: 40px;
-    display: flex;
+    margin-left: 12px;
+    display: block;
 }
 
 
 .menu {
-    width: 100%;
-    justify-content: space-around;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-left: 12px;
+    flex: 1; /* allow search to stay centered */
 }
 
 .menu a {
     text-decoration: none;
     font-size: 16px;
-    color: black;
+    color: white;
+    font-weight: 500;
 }
 
 .menuhamb img {
@@ -93,8 +97,9 @@ body {
 
 .menuImg{
     color: white;
-    font-size: 40px;
+    font-size: 28px;
     cursor: pointer;
+    margin-right: 12px;
 }
 
 /* Barra de pesquisa */
@@ -102,17 +107,18 @@ form {
     position: absolute; /* necessário pra centralizar */
     left: 50%; /* move até o centro */
     transform: translateX(-50%); /* ajusta exatamente no centro */
-    width: 700px;
+    width: 520px;
+    max-width: 60%;
     height: 40px;
     background: white;
     box-sizing: border-box;
     border-radius: 25px;
-    border: 4px solid white;
-    padding: 5px;
+    border: 2px solid white;
+    padding: 5px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 5s;
+    transition: all 0.25s ease;
     flex-shrink: 0;
 }
 
@@ -146,6 +152,7 @@ form i {
 .user {
     margin-left: auto;
     display: flex;
-    margin-right: 120px;
+    margin-right: 20px;
     cursor: pointer;
+    align-items: center;
 }

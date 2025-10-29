@@ -8,6 +8,8 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { SobreComponent } from './views/sobre/sobre.component';
 import { CuriosidadesComponent } from './views/curiosidades/curiosidades.component';
+import { FooterComponent } from './templates/footer/footer.component';
+import { HeaderComponent } from './templates/header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,12 @@ import { CuriosidadesComponent } from './views/curiosidades/curiosidades.compone
     HomeComponent,
     LoginComponent,
     SobreComponent,
-    CuriosidadesComponent
+    CuriosidadesComponent,
+    FooterComponent,
+    HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
