@@ -1,4 +1,4 @@
-### Projeto MedTime
+## Projeto MedTime
 
 * Este é um projeto de registro de alarmes de medicamentos, onde o usuário pode escanear o qrcode ou adicionar a url da sua receita e o aplicativo gera uma serie de horários conforme foram passadas pelo médico.
 
@@ -22,9 +22,11 @@ dose receitada.
 * Impacto psicológico e social
 
 ## Solução:
-* Site acessível para acompanhar o tratamento e garantir que os horários, doses e duração sejam implemntados corretamente
-* Levar informações de como, o uso inadequado de medicações pode ser perigoso.
-* Facilidade de monitoramento por familiares ou cuidadores
+* Registro e acompanhamento digital do tratamento, com horários, doses e duração.
+* Sistema de lembretes e notificações para garantir o uso correto dos medicamentos.
+* Importação automática de receitas via QR Code ou URL.
+* Informações educativas sobre os riscos do uso inadequado de medicamentos.
+* Monitoramento seguro por familiares ou cuidadores.
 
 ## Objetivos do Projeto
 - Facilitar o cotidiano de pacientes no controle de medicamentos.  
@@ -49,14 +51,12 @@ dose receitada.
 - Pacientes em tratamento contínuo.  
 - Idosos ou pessoas com dificuldades de memória.  
 
-
 ## Políticas de Uso e Privacidade
 - Os dados pessoais dos usuários serão armazenados de forma segura e criptografada.  
 
 * Link do Figma:
 
 - https://www.figma.com/design/PeywmyX17F1wwoMebFck7d/Untitled?node-id=0-1&t=Iu7r2cltIvgTNQgG-1
-
 
 ## Como Executar o Projeto:
 - Instalar as dependências do projeto "npm install".
