@@ -1,0 +1,19 @@
+<div class="nav">
+  <div class="logo">
+    <img src="assets/img/Logo.png" alt="logo">
+  </div>
+  
+    <h3 href="/sobre">Sobre Nós</h3>
+    <h3 href="/curiosidades">Curiosidades</h3>
+
+  <form>
+    <i class="fas fa-search"></i>
+    <input type="text" class="input" placeholder="Procurando alguma coisa?">
+  </form>
+
+  <div class="user" *ngIf="authService.currentUser$ | async as user">
+    <i class="fas fa-user.circle"></i>
+    <span class="user-name">
+    </span>
+  </div>
+</div>

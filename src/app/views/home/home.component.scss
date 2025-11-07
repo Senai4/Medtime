@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-top: 80px; /* space for fixed nav */
+}
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to right, #024f87, #0f939b, #7DA0CA);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+// texto para os links da nav
+h3 {
+  color: white;
+  margin: 0 16px;
+  cursor: pointer;
+  font-weight: normal;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+h3:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+/* Estilo para a logo */
+.logo img {
+    height: 48px; /* reduzido para caber na barra */
+    width: auto; /* Mantém a proporção da imagem */
+    margin-left: 15px;
+    display: block;
+}
+
+/* Barra de pesquisa */
+form {
+    position: absolute; /* necessário pra centralizar */
+    left: 50%; /* move até o centro */
+    transform: translateX(-50%); /* ajusta exatamente no centro */
+    width: 520px;
+    max-width: 60%;
+    height: 40px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+form i {
+    font-size: 20px;   /* Tamanho maior */
+    color: #6c6e6d;  /* Cinza escuro */
+    margin-left: 5px;  /* Distância da borda esquerda */
+    margin-right: 1px; /* Espaço entre o ícone e o input */
+    margin-top: 3px;   /* Desce um pouco o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/* Input da pesquisa */
+.input {
+    width: 100%;
+    height: 35px;
+    line-height: 30px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    margin-top: 2px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+}
+
+/* Icone de Login */
+.user {
+    margin-left: auto;
+    display: flex;
+    margin-right: 20px;
+    cursor: pointer;
+    align-items: center;
+}
