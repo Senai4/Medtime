@@ -116,11 +116,12 @@ form i {
   position: relative;
   width: 1400px;
   height: 355px;
-  margin: 120px auto;
+  margin: 120px auto; // Centraliza o carrossel
   background-color: white;
   border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 70px;
 }
 
 .carrossel-images {
@@ -161,11 +162,11 @@ form i {
 /* Perguntas */
 .perguntas-container {
   max-width: 1300px;
-  margin: 50px auto;
-  padding: 0 20px;
+  margin: 50px auto; // Centraliza o container
+  padding: 0 20px; // Espaçamento lateral
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 40px; // Espaçamento entre as perguntas
 }
 
 .faq {
