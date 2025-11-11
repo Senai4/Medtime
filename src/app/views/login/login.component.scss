@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Container principal que engloba os formulários */
+.container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  width: 900px;
+  max-width: 100%;
+  min-height: 500px;
+  border: 3px solid #024f87;
+}
+
+/* Contêiner base para os dois formulários */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  text-align: center;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Formulário de login (inicialmente visível) */
+.sign-in-container {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+  transform: translateX(0);
+}
+
+/* Formulário de cadastro (inicialmente escondido) */
+.sign-up-container {
+  left: 50%;
+  opacity: 0;
+  z-index: 1;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+/* Quando o painel direito está ativo (usuário quer se cadastrar) */
+.container.right-panel-active .sign-in-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mostra o formulário de cadastro */
+.container.right-panel-active .sign-up-container {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+  z-index: 2;
+}
+
+/* Estilização padrão dos formulários */
+form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Estilo dos campos de entrada */
+input {
+  background-color: #eee;
+  border: none;
+  padding: 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 25px;
+}
+
+/* Estilo base dos botões */
+button {
+  border-radius: 25px;
+  border: none;
+  background-color: #024f87;
+  color: white;
+  font-size: 14px;
+  padding: 12px 40px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 80ms ease-in-out;
+}
+
+/* Botão transparente com borda — usado na overlay */
+button.ghost {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+/* Contêiner do overlay que cobre metade da tela */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+/* Move o overlay para a esquerda quando ativo */
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+/* Estilo do painel azul com textos de transição */
+.overlay {
+  background: #024f87;
+  color: white;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Move o overlay para o centro quando ativado */
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+/* Painel interno do overlay (conteúdo) */
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  padding: 0 40px;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Painel da esquerda (login) */
+.overlay-left {
+  transform: translateX(-20%);
+  left: 0;
+}
+
+/* Quando ativado, traz o painel da esquerda de volta */
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+/* Painel da direita (cadastro) */
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* Quando ativado, move o painel da direita */
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+/* Logo */
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 20px 0 20px;
+  transform: translateY(-200px);
+  margin-top: 0;
+
+  img {
+   max-height: 370px;
+   height: auto;
+   width: auto;
+  }
+}
+
+.class-item {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  text-align: center;
+  transition: all 0.6s ease-in-out;
+}

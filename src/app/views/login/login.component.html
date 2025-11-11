@@ -1,0 +1,53 @@
+<!-- Containr principal para englobar os formulários de login e cadastro  -->
+<div class="container" id="container" [ngClass]="{ 'right-panel-active': isRightPanelActive }">
+
+<!-- Formulário de Cadastro -->
+<div class="form-container sign-up-container">
+  <form #cadastroForm="ngForm" (ngSubmit)="onSubmitCadastro(cadastroForm.value)">
+    <h1>Cadastre-se</h1>
+    <input type="text" placeholder="Nome" name="nome" required ngModel />
+    <input type="email" placeholder="Email" name="email" required ngModel autocomplete="off" />
+    <input type="password" placeholder="Senha" name="senha" required ngModel />
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+
+<!-- Formulário de Login -->
+<div class="form-container sign-in-container">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
+    <h1>Login</h1>
+    <input type="email" placeholder="Email" name="email" required ngModel autocomplete="off" />
+    <input type="password" placeholder="Senha" name="senha" required ngModel />
+    <button type="submit">Entrar</button>
+  </form>
+</div>
+
+<!-- Painel Azul -->
+<div class="overlay-container">
+  <div class="overlay">
+    <!-- Painel Esquerdo: aparece quando cadastro está ativo -->
+    <div class="overlay-panel overlay-left">
+      <div class="logo-header">
+          <img src="assets/img/Logo.png" alt="MedTime">
+      </div>
+      <div class="class-item">
+        <h1>BEM-VINDO(A) AO NOSSO SITE!</h1>
+        <p>Já possui uma conta?</p>
+        <button class="ghost" (click)="showSignInPanel()">Faça Login!</button>
+      </div>
+    </div>
+
+    <!-- Painel Direito: aparece quando login está ativo -->
+    <div class="overlay-panel overlay-right">
+      <div class="logo-header">
+          <img src="assets/img/Logo.png" alt="MedTime" >
+      </div>
+      <div class="class-item">
+        <h1>BEM-VINDO(A) DE VOLTA!</h1>
+        <p>Ainda sem login?</p>
+        <button class="ghost" (click)="showSignUpPanel()">Cadastre-se</button>
+      </div>
+    </div>
+
+  </div>
+</div>

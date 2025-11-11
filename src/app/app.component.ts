@@ -17,7 +17,7 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Adicione todas as rotas que NÃO devem mostrar header/footer
-        this.esconderHeaderFooter = ['/login', '/cadastro', '/vagas'].includes(
+        this.esconderHeaderFooter = ['/login'].includes(
           event.urlAfterRedirects
         );
       }

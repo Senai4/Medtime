@@ -10,6 +10,7 @@ import { SobreComponent } from './views/sobre/sobre.component';
 import { CuriosidadesComponent } from './views/curiosidades/curiosidades.component';
 import { FooterComponent } from './templates/footer/footer.component';
 import { HeaderComponent } from './templates/header/header.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,14 @@ import { HeaderComponent } from './templates/header/header.component';
     FooterComponent,
     HeaderComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
+
 })
 export class AppModule {}
