@@ -12,9 +12,9 @@ app.get("/", (req, res) => {
   res.send("API MedTime (Backend) está funcionando!");
 });
 
-db.sequelize.sync()
+db.sequelize.sync({ alter: true }) 
   .then(() => {
-    console.log('Tabelas sincronizadas com o banco de dados.');
+    console.log('Tabelas sincronizadas com o banco de dados. (Modo Alter)');
 
     app.listen(port, () => {
       console.log(`Backend rodando em http://localhost:${port}`);

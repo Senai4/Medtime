@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -38,15 +39,13 @@ export class LoginComponent implements OnInit, OnDestroy {
     const { email, senha } = formData;
 
     this.authService.login(email, senha).subscribe({
-      // Se der certo (admin ou user)
       next: (role) => {
         if (role === 'admin') {
-          this.router.navigate(['/admin']); // Navega para /admin
+          this.router.navigate(['/administrador']);
         } else {
-          this.router.navigate(['/dashboard']); // Navega para /dashboard
+          this.router.navigate(['/dashboard']);
         }
       },
-      // Se der errado
       error: (err) => {
         console.error('Erro no login:', err);
         alert('Email ou senha inválidos!');
@@ -55,17 +54,26 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onSubmitCadastro(formData: any): void {
-    this.authService.cadastro(formData).subscribe({
-      // Se der certo
-      next: (response) => {
-        console.log('Usuário cadastrado:', response);
-        alert('Cadastro realizado com sucesso! Faça o login.');
-        this.showSignInPanel(); // Volta para o painel de login
+
+    this.authService.cadastro(formData).pipe(
+
+      switchMap(() => {
+        return this.authService.login(formData.email, formData.senha);
+      })
+
+    ).subscribe({
+
+      next: (role) => {
+        console.log('Cadastro e login automático com sucesso!', role);
+
+        this.router.navigate(['/dashboard']);
       },
-      // Se der errado (ex: email duplicado)
+
       error: (err) => {
-        console.error('Erro no cadastro:', err.error.error);
-        alert(err.error.error || 'Erro ao cadastrar.'); // Mostra o erro da API
+        console.error('Erro no cadastro ou login automático:', err);
+
+        const mensagemErro = err.error?.error || 'Erro ao processar sua solicitação.';
+        alert(mensagemErro);
       }
     });
   }

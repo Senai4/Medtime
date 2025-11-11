@@ -1,14 +1,19 @@
 const db = require('../config/db');
 const User = db.users;
+const bcrypt = require('bcryptjs');
+
 
 exports.cadastro = async (req, res) => {
   const { nome, email, senha } = req.body;
 
   try {
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(senha, salt);
+
     const newUser = await User.create({
       nome: nome,
       email: email,
-      senha: senha
+      senha: hash
     });
 
     res.status(201).json(newUser);
@@ -26,18 +31,17 @@ exports.login = async (req, res) => {
   const { email, senha } = req.body;
 
   try {
-
     const user = await User.findOne({ where: { email: email } });
-
     if (!user) {
       return res.status(401).json({ error: 'Email ou senha inválidos' });
     }
 
-    if (senha !== user.senha) {
+    const match = await bcrypt.compare(senha, user.senha);
+    if (!match) {
       return res.status(401).json({ error: 'Email ou senha inválidos' });
     }
 
-    res.status(200).json({ message: 'Login bem-sucedido' });
+    res.status(200).json({ role: user.role });
 
   } catch (error) {
     console.error(error);
