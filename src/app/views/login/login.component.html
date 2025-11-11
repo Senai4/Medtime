@@ -12,7 +12,7 @@
   <form #cadastroForm="ngForm" (ngSubmit)="onSubmitCadastro(cadastroForm.value)">
     <h1>Cadastre-se</h1>
     <div class="input-icon">
-      <input type="text" placeholder="Nome:" name="nome" required ngModel />
+      <input type="text" placeholder="Nome:" name="nome" required ngModel autocomplete="off"/>
       <i class="fa fa-user"></i>
     </div>
     <div class="input-icon">
@@ -20,7 +20,7 @@
       <i class="fa fa-envelope"></i>
     </div>
     <div class="input-icon">
-      <input type="password" placeholder="Senha:" name="senha" required ngModel />
+      <input type="password" placeholder="Senha:" name="senha" required ngModel autocomplete="off"/>
       <i class="fa fa-lock"></i>
     </div>
     <button type="submit">Cadastrar</button>
@@ -36,7 +36,7 @@
       <i class="fa fa-envelope"></i>
     </div>
     <div class="input-icon">
-      <input type="password" placeholder="Senha:" name="senha" required ngModel />
+      <input type="password" placeholder="Senha:" name="senha" required ngModel autocomplete="off" />
       <i class="fa fa-lock"></i>
     </div>
     <button type="submit">Entrar</button>

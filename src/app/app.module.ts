@@ -11,6 +11,8 @@ import { CuriosidadesComponent } from './views/curiosidades/curiosidades.compone
 import { FooterComponent } from './templates/footer/footer.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AdministradorComponent } from './views/administrador/administrador.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     SobreComponent,
     CuriosidadesComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
