@@ -1,3 +1,9 @@
+<div class="voltar-home">
+  <a routerLink="/home" title="Ir para Home">
+    <i class="fas fa-circle-arrow-left"></i>
+  </a>
+</div>
+
 <!-- Containr principal para englobar os formulários de login e cadastro  -->
 <div class="container" id="container" [ngClass]="{ 'right-panel-active': isRightPanelActive }">
 
@@ -5,9 +11,18 @@
 <div class="form-container sign-up-container">
   <form #cadastroForm="ngForm" (ngSubmit)="onSubmitCadastro(cadastroForm.value)">
     <h1>Cadastre-se</h1>
-    <input type="text" placeholder="Nome" name="nome" required ngModel />
-    <input type="email" placeholder="Email" name="email" required ngModel autocomplete="off" />
-    <input type="password" placeholder="Senha" name="senha" required ngModel />
+    <div class="input-icon">
+      <input type="text" placeholder="Nome:" name="nome" required ngModel />
+      <i class="fa fa-user"></i>
+    </div>
+    <div class="input-icon">
+      <input type="email" placeholder="Email:" name="email" required ngModel autocomplete="off" />
+      <i class="fa fa-envelope"></i>
+    </div>
+    <div class="input-icon">
+      <input type="password" placeholder="Senha:" name="senha" required ngModel />
+      <i class="fa fa-lock"></i>
+    </div>
     <button type="submit">Cadastrar</button>
   </form>
 </div>
@@ -16,8 +31,14 @@
 <div class="form-container sign-in-container">
   <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
     <h1>Login</h1>
-    <input type="email" placeholder="Email" name="email" required ngModel autocomplete="off" />
-    <input type="password" placeholder="Senha" name="senha" required ngModel />
+    <div class="input-icon">
+      <input type="email" placeholder="Email:" name="email" required ngModel autocomplete="off" />
+      <i class="fa fa-envelope"></i>
+    </div>
+    <div class="input-icon">
+      <input type="password" placeholder="Senha:" name="senha" required ngModel />
+      <i class="fa fa-lock"></i>
+    </div>
     <button type="submit">Entrar</button>
   </form>
 </div>
@@ -44,7 +65,7 @@
       </div>
       <div class="class-item">
         <h1>BEM-VINDO(A) DE VOLTA!</h1>
-        <p>Ainda sem login?</p>
+        <p>Ainda não possui conta?</p>
         <button class="ghost" (click)="showSignUpPanel()">Cadastre-se</button>
       </div>
     </div>
