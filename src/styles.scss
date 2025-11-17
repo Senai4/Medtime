@@ -6,11 +6,19 @@
 
 body.body-login {
   background-color: #f9f9f9;
-  // background: linear-gradient(to right, #024f87, #0f939b, #7DA0CA);
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+}
+
+body.body-sobre {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #024f87, #0f939b, #7DA0CA);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 80px;
 }
