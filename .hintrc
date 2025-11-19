@@ -18,6 +18,7 @@
         "link-name": "off"
       }
     ],
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "no-inline-styles": "off"
   }
 }

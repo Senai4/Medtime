@@ -1,1 +1,104 @@
-<p>dashboard works!</p>
+<div class="nav">
+  <div class="menuImg" #menuIcon (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="menu-mobile" #menu [class.active]="menuAtivo">
+
+    <a routerLink="/sobre" (click)="toggleMenu()">Sobre Nós</a>
+    <a routerLink="/curiosidades" (click)="toggleMenu()">Curiosidades</a>
+    <a routerLink="/escanear" (click)="toggleMenu()">Escanear QrCode</a>
+    <a *ngIf="isAdmin" routerLink="/administrador" (click)="toggleMenu()">Administrador</a>
+
+  </div>
+
+  <div class="logo">
+    <img src="assets/img/Logo.png" alt="logo">
+  </div>
+
+  <form>
+    <i class="fas fa-search"></i>
+    <input type="text" class="input" placeholder="Procurando alguma coisa?">
+  </form>
+
+  <div class="user" *ngIf="authService.currentUser$ | async as user" style="color: white; margin-left: auto;">
+    <i class="fas fa-user-circle"></i>
+    <span class="user-name">
+      {{ user.perfil === 'admin' ? 'ADM' : user.nome }}
+    </span>
+  </div>
+</div>
+
+<!-- Carrossel -->
+<div class="carrossel" (mouseenter)="pauseSlide()" (mouseleave)="startAutoSlide()">
+
+  <div class="carrossel-images" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+
+    <img *ngFor="let img of images" [src]="img" alt="Img">
+  </div>
+
+  <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
+  <button class="next" (click)="moveSlide(1)">&#10095;</button>
+</div>
+
+<!-- Perguntas -->
+<div class="perguntas-container">
+  <details class="faq">
+    <summary> O que é um "anticorpo"?</summary>
+    <p>Uma proteína produzida pelo sistema imunológico para neutralizar um agente patogénico (vírus, bactéria).</p>
+  </details>
+
+  <details class="faq">
+    <summary> Qual tipo de exercício é considerado o mais importante para a saúde cardiovascular?</summary>
+    <p>Exercícios aeróbicos (como caminhada, corrida, natação), que fortalecem o coração e melhoram a circulação.</p>
+  </details>
+
+  <details class="faq">
+    <summary> Qual a principal função do sono REM (Movimento Rápido dos Olhos)?</summary>
+    <p>É a fase onde a maioria dos sonhos ocorre e é crucial para o processamento da memória e aprendizado</p>
+  </details>
+
+  <details class="faq">
+    <summary> O cérebro usa qual porcentagem da energia total que o corpo consome?</summary>
+    <p>Aproximadamente 20% da energia e do oxigênio, mesmo pesando apenas cerca de 2% do peso corporal total.</p>
+  </details>
+
+  <details class="faq">
+    <summary> Qual condição é o principal fator de risco modificável para doenças cardíacas, derrames e diabetes tipo 2?</summary>
+    <p>A hipertensão (pressão arterial alta).</p>
+  </details>
+
+  <details class="faq">
+    <summary> Qual é a principal diferença entre um vírus e uma bactéria?</summary>
+    <p>A bactéria é um organismo unicelular que pode se replicar sozinho, enquanto o vírus é uma partícula que precisa invadir
+    uma célula hospedeira para se replicar.</p>
+  </details>
+</div>
+
+<!-- Carrossel de Marcas -->
+<div class="logo-carousel">
+  <div class="logo-track" id="logoTrack">
+    <div class="logo-item"><img src="assets/img/marcas/1.svg" alt="Logo 1" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/2.svg" alt="Logo 2" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/3.svg" alt="Logo 3" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/4.svg" alt="Logo 4" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/5.svg" alt="Logo 5" /></div>
+
+    <div class="logo-item"><img src="assets/img/marcas/1.svg" alt="Logo 1" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/2.svg" alt="Logo 2" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/3.svg" alt="Logo 3" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/4.svg" alt="Logo 4" /></div>
+    <div class="logo-item"><img src="assets/img/marcas/5.svg" alt="Logo 5" /></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="social-icons">
+      <a href="https://instagram.com/medtime.3" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank" class="icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>

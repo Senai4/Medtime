@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sobre',
@@ -8,14 +9,22 @@ import { Router } from '@angular/router';
 })
 export class SobreComponent{
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   irParaLogin(): void {
     this.router.navigate(['/login']);
   }
 
-  Voltar(): void {
-    this.router.navigate(['/home']);
+  voltarInteligente() {
+    console.log('Cliquei no voltar');
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.router.navigate(['/home']);
+    }
   }
 
   irParaCuriosidades(): void {

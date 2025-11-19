@@ -4,77 +4,64 @@ import { AuthService } from '../../services/auth.service';
 import { switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  isRightPanelActive: boolean = false;
+  isRightPanelActive: boolean = false;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  // Método para ativar o painel de cadastro
-  showSignUpPanel(): void {
-    this.isRightPanelActive = true;
-  }
+  showSignUpPanel(): void {
+    this.isRightPanelActive = true;
+  }
 
-  // Método para ativar o painel de login
-  showSignInPanel(): void {
-    this.isRightPanelActive = false;
-  }
+  showSignInPanel(): void {
+    this.isRightPanelActive = false;
+  }
 
-  ngOnInit(): void {
-    document.body.classList.add('body-login');
-  }
+  ngOnInit(): void {
+    document.body.classList.add('body-login');
+  }
 
-  ngOnDestroy(): void {
-    document.body.classList.remove('body-login');
-  }
+  ngOnDestroy(): void {
+    document.body.classList.remove('body-login');
+  }
 
-  onSubmitLogin(formData: any): void {
-    const { email, senha } = formData;
+  onSubmitLogin(formData: any): void {
+    const { email, senha } = formData;
 
-    this.authService.login(email, senha).subscribe({
-      next: (role) => {
-        if (role === 'admin') {
-          this.router.navigate(['/administrador']);
-        } else {
-          this.router.navigate(['/dashboard']);
-        }
-      },
-      error: (err) => {
-        console.error('Erro no login:', err);
-        alert('Email ou senha inválidos!');
-      }
-    });
-  }
+    this.authService.login(email, senha).subscribe({
+      next: (role) => {
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        console.error('Erro no login:', err);
+        alert('Email ou senha inválidos!');
+      }
+    });
+  }
 
-  onSubmitCadastro(formData: any): void {
-
-    this.authService.cadastro(formData).pipe(
-
-      switchMap(() => {
-        return this.authService.login(formData.email, formData.senha);
-      })
-
-    ).subscribe({
-
-      next: (role) => {
-        console.log('Cadastro e login automático com sucesso!', role);
-
-        this.router.navigate(['/dashboard']);
-      },
-
-      error: (err) => {
-        console.error('Erro no cadastro ou login automático:', err);
-
-        const mensagemErro = err.error?.error || 'Erro ao processar sua solicitação.';
-        alert(mensagemErro);
-      }
-    });
-  }
+  onSubmitCadastro(formData: any): void {
+    this.authService.cadastro(formData).pipe(
+      switchMap(() => {
+        return this.authService.login(formData.email, formData.senha);
+      })
+    ).subscribe({
+      next: (role) => {
+        console.log('Cadastro e login automático com sucesso!', role);
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        console.error('Erro no cadastro ou login automático:', err);
+        const mensagemErro = err.error?.error || 'Erro ao processar sua solicitação.';
+        alert(mensagemErro);
+      }
+    });
+  }
 }

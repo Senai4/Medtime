@@ -28,23 +28,30 @@ exports.cadastro = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { email, senha } = req.body;
+  const { email, senha } = req.body;
 
-  try {
-    const user = await User.findOne({ where: { email: email } });
-    if (!user) {
-      return res.status(401).json({ error: 'Email ou senha inválidos' });
-    }
+  try {
+    const user = await User.findOne({ where: { email: email } });
+    if (!user) {
+      return res.status(401).json({ error: 'Email ou senha inválidos' });
+    }
 
-    const match = await bcrypt.compare(senha, user.senha);
-    if (!match) {
-      return res.status(401).json({ error: 'Email ou senha inválidos' });
-    }
+    const match = await bcrypt.compare(senha, user.senha);
+    if (!match) {
+      return res.status(401).json({ error: 'Email ou senha inválidos' });
+    }
 
-    res.status(200).json({ role: user.role });
+    const userData = user.toJSON();
 
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Erro interno no login.' });
-  }
+    res.status(200).json({
+      id: userData.id,
+      nome: userData.nome,
+      email: userData.email,
+      perfil: userData.role
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro interno no login.' });
+  }
 };

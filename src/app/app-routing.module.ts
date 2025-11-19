@@ -6,6 +6,7 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdministradorComponent } from './views/administrador/administrador.component';
+import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,12 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'administrador', component: AdministradorComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/login' },
+  { path: 'administrador', component: AdministradorComponent, canActivate: [RoleGuard],
+  data: {
+      expectedRole: 'admin'
+        }
+    },
 ];
 
 @NgModule({
