@@ -7,26 +7,22 @@ import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdministradorComponent } from './views/administrador/administrador.component';
 import { RoleGuard } from './guards/role.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'sobre', component: SobreComponent },
-  { path: 'curiosidades', component: CuriosidadesComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'administrador', component: AdministradorComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' },
-  { path: 'administrador', component: AdministradorComponent, canActivate: [RoleGuard],
-  data: {
-      expectedRole: 'admin'
-        }
-    },
+
+    { path: 'home', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'sobre', component: SobreComponent },
+    { path: 'curiosidades', component: CuriosidadesComponent },
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'administrador', component: AdministradorComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'admin' }},
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

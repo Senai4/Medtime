@@ -24,15 +24,26 @@ export class AuthService {
   currentUser$ = this.currentUserSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.carregarUsuarioSalvo();
-  }
+    this.carregarUsuarioSalvo();
+  }
 
-  private carregarUsuarioSalvo() {
-    const userData = localStorage.getItem('currentUser');
-    if (userData) {
-      this.currentUserSubject.next(JSON.parse(userData));
-    }
-  }
+  private carregarUsuarioSalvo() {
+    const userData = localStorage.getItem('currentUser');
+    if (userData) {
+      try {
+        const user = JSON.parse(userData);
+
+        if (user && user.id) {
+          this.currentUserSubject.next(user);
+        } else {
+            this.logout();
+        }
+      } catch (e) {
+        console.error('Erro ao carregar usuário salvo, limpando dados.', e);
+        this.logout();
+      }
+    }
+  }
 
   login(email: string, senha: string): Observable<'admin' | 'user'> {
   return this.http.post<Usuario>(`${this.apiUrl}/login`, { email, senha }).pipe(
@@ -72,7 +83,6 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-  const logado = localStorage.getItem('userRole');
-  return !!logado;
-  }
+    return this.isLoggedIn();
+  }
 }

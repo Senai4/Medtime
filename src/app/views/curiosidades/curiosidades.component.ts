@@ -26,13 +26,11 @@ export class CuriosidadesComponent {
     this.router.navigate(['/sobre']);
   }
 
-  voltarInteligente() {
-    console.log('Cliquei no voltar');
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.router.navigate(['/home']);
-    }
+  voltar() {
+  if (this.authService.isLoggedIn()) {
+    this.router.navigate(['/dashboard']);
+  } else {
+    this.router.navigate(['/home']); 
   }
-
+}
 }
