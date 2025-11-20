@@ -21,13 +21,50 @@
     <input type="text" class="input" placeholder="Procurando alguma coisa?">
   </form>
 
-  <div class="user" *ngIf="authService.currentUser$ | async as user" style="color: white; margin-left: auto;">
-    <i class="fas fa-user-circle"></i>
-    <span class="user-name">
+  <div class="nav-user" *ngIf="authService.currentUser$ | async as user" (click)="toggleUserMenu()" #userIcon>
+    <i class="fas fa-user-circle nav-user-icon"></i>
+    <span class="nav-user-name">
       {{ user.perfil === 'admin' ? 'ADM' : user.nome }}
     </span>
   </div>
 </div>
+
+<div class="user-sidebar" #userMenu [class.active]="userMenuAtivo">
+  <div class="user-info-header">
+    <span class="menu-title">Contas</span>
+  </div>
+
+  <div class="user-profile-card">
+    <div class="profile-avatar">
+      <i class="fas fa-user-circle"></i>
+    </div>
+    <div class="profile-details">
+      <span class="profile-name">{{ authService.getUsuario()?.nome || authService.getUsuario()?.name }}</span>
+      <span class="profile-email">{{ authService.getUsuario()?.email }}</span>
+    </div>
+    <i class="fas fa-chevron-right profile-arrow"></i>
+  </div>
+
+  <div class="user-menu-options">
+    <a href="#" class="menu-option">
+      <i class="fas fa-cog option-icon"></i>
+      <span>Configurações</span>
+    </a>
+    <a href="#" class="menu-option">
+      <i class="fas fa-shield-alt option-icon"></i>
+      <span>Política de Privacidade</span>
+    </a>
+    <a href="#" class="menu-option">
+      <i class="fas fa-mobile-alt option-icon"></i>
+      <span>Baixe o App do MedTime</span>
+    </a>
+    <a (click)="efetuarLogout()" class="menu-option logout-option">
+      <i class="fas fa-sign-out-alt option-icon"></i>
+      <span>Fazer Logout</span>
+    </a>
+  </div>
+</div>
+<div class="overlay" [class.active]="userMenuAtivo" (click)="toggleUserMenu()"></div>
 
 <!-- Carrossel -->
 <div class="carrossel" (mouseenter)="pauseSlide()" (mouseleave)="startAutoSlide()">
