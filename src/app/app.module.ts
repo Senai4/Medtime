@@ -13,6 +13,7 @@ import { HeaderComponent } from './templates/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdministradorComponent } from './views/administrador/administrador.component';
+import { ConfiguracaoComponent } from './views/configuracao/configuracao.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdministradorComponent } from './views/administrador/administrador.comp
     FooterComponent,
     HeaderComponent,
     DashboardComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    ConfiguracaoComponent
   ],
   imports: [
     BrowserModule,

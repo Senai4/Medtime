@@ -84,6 +84,7 @@
   padding: 12px;
   border-radius: 10px;
   transition: background 0.2s ease-in-out;
+  font-weight: bold;
 }
 
 .menu-mobile a:hover {
@@ -363,84 +364,81 @@ form i {
   transform: scale(1.1);
 }
 
-/* Estilos para o Menu do Usuário (user-sidebar) */
+/* Estilos para o Menu do Usuário */
 .user-sidebar {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
-  background-color: #004D40;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
-  display: flex;
+  left: 0;
+  width: 290px;
+  height: 320px;
+  background: linear-gradient(to right, #024f87, #0f939b, #7DA0CA);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
   flex-direction: column;
-  padding: 20px 0;
-  color: white;
+  padding: 15px;
+  z-index: 2000;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  border-radius: 15px;
+  margin-left: 1190px;
+  margin-top: 10px;
 }
 
 .user-sidebar.active {
-  transform: translateX(0);
-}
-
-.user-info-header {
-  padding: 0 20px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 20px;
-}
-
-.user-info-header .menu-title {
-  font-size: 1.2rem;
-  font-weight: bold;
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .user-profile-card {
   display: flex;
-  align-items: center;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  align-items: flex-start;
+  padding: 8px 8px;
 }
 
-.profile-avatar .fas.fa-user-circle {
-  font-size: 3rem;
-  margin-right: 15px;
-  color: #BBDEFB;
+.profile-avatar {
+  margin-left: -8px;
+  margin-top: -25px;
+  margin-right: 10px;
+
+  .fas.fa-user-circle {
+    font-size: 3rem;
+    color: white;
+    display: block;
+  }
 }
 
 .profile-details {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  margin-left: 0;
+  margin-top: 0;
+  padding-bottom: 8px;
 }
 
 .profile-name {
   font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: -20px;
+  color: white;
+  margin-top: -25px;
 }
 
 .profile-email {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.profile-arrow {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0px;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .user-menu-options {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  margin: -55px;
+  margin-left: -15px;
 }
 
 .user-menu-options .menu-option {
@@ -451,22 +449,21 @@ form i {
   color: white;
   transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+
 }
 
 .user-menu-options .menu-option .option-icon {
-  font-size: 1.2rem;
-  margin-right: 15px;
+  font-size: 25px;
+  margin-right: -5px;
   width: 25px;
   text-align: center;
 }
 
 .logout-option {
-  color: #FFCDD2;
+  color: white;
   margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  margin: 4px;
 }
 
 /* Estilos para o overlay */

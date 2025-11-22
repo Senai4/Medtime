@@ -30,10 +30,6 @@
 </div>
 
 <div class="user-sidebar" #userMenu [class.active]="userMenuAtivo">
-  <div class="user-info-header">
-    <span class="menu-title">Contas</span>
-  </div>
-
   <div class="user-profile-card">
     <div class="profile-avatar">
       <i class="fas fa-user-circle"></i>
@@ -41,22 +37,18 @@
     <div class="profile-details">
       <span class="profile-name">{{ authService.getUsuario()?.nome || authService.getUsuario()?.name }}</span>
       <span class="profile-email">{{ authService.getUsuario()?.email }}</span>
+      <i class="fas fa-horizontal-rule"></i>
     </div>
-    <i class="fas fa-chevron-right profile-arrow"></i>
   </div>
 
   <div class="user-menu-options">
-    <a href="#" class="menu-option">
+    <a href="/configuracao" class="menu-option">
       <i class="fas fa-cog option-icon"></i>
       <span>Configurações</span>
     </a>
     <a href="#" class="menu-option">
       <i class="fas fa-shield-alt option-icon"></i>
       <span>Política de Privacidade</span>
-    </a>
-    <a href="#" class="menu-option">
-      <i class="fas fa-mobile-alt option-icon"></i>
-      <span>Baixe o App do MedTime</span>
     </a>
     <a (click)="efetuarLogout()" class="menu-option logout-option">
       <i class="fas fa-sign-out-alt option-icon"></i>
