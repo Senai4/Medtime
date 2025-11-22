@@ -438,7 +438,7 @@ form i {
   display: flex;
   flex-direction: column;
   margin: -55px;
-  margin-left: -15px;
+  margin-left: -20px;
 }
 
 .fas.fa-cog.option-icon {
@@ -456,6 +456,11 @@ form i {
 h5 {
   margin-left: -10px;
   color: white;
+}
+
+h5:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
 }
 
 .user-menu-options .menu-option {

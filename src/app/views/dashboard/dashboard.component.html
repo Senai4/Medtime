@@ -58,6 +58,7 @@
     </a>
   </div>
 </div>
+<div class="overlay" [class.active]="userMenuAtivo" (click)="toggleUserMenu()"></div>
 
 <!-- Carrossel -->
 <div class="carrossel" (mouseenter)="pauseSlide()" (mouseleave)="startAutoSlide()">
