@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdministradorComponent } from './views/administrador/administrador.component';
 import { ConfiguracaoComponent } from './views/configuracao/configuracao.component';
+import { PoliticaPrivacidadeComponent } from './views/politica-privacidade/politica-privacidade.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ConfiguracaoComponent } from './views/configuracao/configuracao.compone
     HeaderComponent,
     DashboardComponent,
     AdministradorComponent,
-    ConfiguracaoComponent
+    ConfiguracaoComponent,
+    PoliticaPrivacidadeComponent
   ],
   imports: [
     BrowserModule,

@@ -441,6 +441,23 @@ form i {
   margin-left: -15px;
 }
 
+.fas.fa-cog.option-icon {
+  font-size: 22px;
+  margin-left: 22px;
+  margin-top: 10px;
+}
+
+.config h5 {
+  color: white;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+h5 {
+  margin-left: -10px;
+  color: white;
+}
+
 .user-menu-options .menu-option {
   display: flex;
   align-items: center;
@@ -448,14 +465,12 @@ form i {
   text-decoration: none;
   color: white;
   transition: background-color 0.2s ease;
-
-
 }
 
 .user-menu-options .menu-option .option-icon {
-  font-size: 25px;
-  margin-right: -5px;
-  width: 25px;
+  font-size: 22px;
+  margin-right: 12px;
+  width: 28px;
   text-align: center;
 }
 

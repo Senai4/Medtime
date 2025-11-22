@@ -42,21 +42,22 @@
   </div>
 
   <div class="user-menu-options">
-    <a href="/configuracao" class="menu-option">
-      <i class="fas fa-cog option-icon"></i>
-      <span>Configurações</span>
-    </a>
-    <a href="#" class="menu-option">
+  <div class="config">
+    <a routerLink="/configuracao" (click)="toggleUserMenu()" class="menu-option">
+      <i class="fas fa-cog option-icon"></i>
+      <h5>Configurações</h5>
+    </a>
+  </div>
+    <a routerLink="/politica-privacidade" (click)="toggleUserMenu()" class="menu-option">
       <i class="fas fa-shield-alt option-icon"></i>
-      <span>Política de Privacidade</span>
+      <h5>Política de Privacidade</h5>
     </a>
     <a (click)="efetuarLogout()" class="menu-option logout-option">
       <i class="fas fa-sign-out-alt option-icon"></i>
-      <span>Fazer Logout</span>
+      <h5>Fazer Logout</h5>
     </a>
   </div>
 </div>
-<div class="overlay" [class.active]="userMenuAtivo" (click)="toggleUserMenu()"></div>
 
 <!-- Carrossel -->
 <div class="carrossel" (mouseenter)="pauseSlide()" (mouseleave)="startAutoSlide()">
